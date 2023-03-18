@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pop-up window</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+
+        @import url("https://kit-pro.fontawesome.com/releases/latest/css/pro.min.css");
+        @import url("https://kit-free.fontawesome.com/releases/latest/css/free.min.css");
+
+        @font-face {
+            font-family: "Montserrat-Arabic-Regular";
+            src: url("https://cdn.salla.sa/Xovzq/J11VUonqHjtkLVqUU5d6kwKknqEbDkkACEFu7csQ");
+        }
+
+        body,
+        *:not(i),
+        body .category-title {
+            font-family: "Montserrat-Arabic-Regular" !important;
+        }
+
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            width: 360px;
+            padding: 8% 0 0;
+            margin: auto;
+        }
+
+        .form {
+            position: relative;
+            z-index: 1;
+            background: #FFFFFF;
+            max-width: 360px;
+            margin: 0 auto 100px;
+            padding: 45px;
+            text-align: center;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        }
+
+        .form input {
+            font-family: "Montserrat-Arabic-Regular" !important;
+            outline: 0;
+            background: #f2f2f2;
+            width: 100%;
+            border: 0;
+            margin: 0 0 15px;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .form button {
+            font-family: "Montserrat-Arabic-Regular" !important;
+            text-transform: uppercase;
+            outline: 0;
+            background: #58AD6C;
+            width: 100%;
+            border: 0;
+            padding: 15px;
+            color: #FFFFFF;
+            font-size: 14px;
+            -webkit-transition: all 0.3 ease;
+            transition: all 0.3 ease;
+            cursor: pointer;
+        }
+
+        .form button:hover,
+        .form button:active,
+        .form button:focus {
+            background: #58AD6C;
+        }
+
+        .popup .container {
+            position: relative;
+            z-index: 1;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .container:before,
+        .container:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: #f3f3f3 url(./images/close.png);
+            background-repeat: no-repeat;
+            background-size: 10px;
+            background-position: center;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="popup">
+
+        <div class="form">
+            <form class="login-form">
+                <div class="close"></div>
+                <div>
+                    <p>احصل على خصم 10٪ لطلبك الأول من التطبيق</p>
+                </div>
+                <input name="name" type="text" placeholder="الاسم" />
+                <input name="email" type="email" placeholder="بريدك الالكتروني" />
+                <input name="phone number" type="text" placeholder="05xxxxxxxx" />
+                <button>احصل على الخصم</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const popup = document.querySelector('.popup');
+        const close = document.querySelector('.close');
+        window.onload = function () {
+            setTimeout(function () {
+                popup.style.display = "block"
+                //add some time delay to show popup
+            }, 2000)
+        }
+        close.addEventListener('click', () => { popup.style.display = "none;" })</script>
+
+</body>
+
+</html>
